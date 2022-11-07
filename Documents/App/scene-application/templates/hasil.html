@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <title>Prediction Result</title>
+    <link rel = "icon" href="/static/icon/icon.png" type = "image/x-icon"> 
+</head>
+<body>
+    <header>
+        <div class="jumbotron">
+            <h1>Predict</h1>
+            <p>Get your prediction here</p>
+        </div>
+    </header>
+    
+    <main>
+        <div id="content">
+            <article id="home" class="card">
+                <div id="result"></div>
+                <img src="{{user_img}}" class="img-res" />
+            </article>
+        </div>
+    </main>
+
+    <script>
+        const getResText = (array)=>{
+            var indexOfMaxValue = array.reduce((iMax, x, i, arr) => x > arr[iMax] ? i : iMax, 0);
+            return `Classification Result: ${Math.max(...array).toFixed(4)*100}%  ${label[indexOfMaxValue]}`
+        }
+        const label=["Buildings","Forests","Mountains","Glacier","Sea","Street"]
+        const result=document.getElementById('result')
+        console.log({{prediction}})
+        result.innerText = getResText({{prediction}})
+    </script>
+</body>
+</html>

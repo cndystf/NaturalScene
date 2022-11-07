@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <title>Natural Scene</title>
+    <link rel = "icon" href="/static/icon/icon.png" type = "image/x-icon">      
+</head>
+<body>       
+    <header>
+        <div class="jumbotron">
+          <h1>Natural Scene</h1>
+          <p>Upload your scene and check the prediction</p>
+        </div>
+    </header>
+
+    <main> 
+        <div id="content">
+            <article id="home" class="card">
+              <section>
+                <h3>Using Model</h3>
+                <label>Upload Image</label>
+                <br/>
+                <br/>
+                <form action="/predict"
+                      method="post"
+                      enctype="multipart/form-data">
+                <input name="file" type="file" accept=".jpg,.jpeg,.png" required>
+                <button type="submit" class="btn btn-check">Check</button>
+                </form>
+              </section>
+            </article>
+        </div>
+    </main>
+</body>
+</html>
+
+        <!-- <aside>
+          <article class="profile" class="card">
+            <header>
+                <h2>List of model used</h2>
+            </header>
+            <section>
+                <table>
+                   <tr>
+                      <th>VGG-16</th>
+                      <td> Acc : </td>
+                   </tr>
+                    <tr>
+                      <th>AlexNet</th>
+                      <td> Acc : </td>
+                   </tr>
+                   <tr>
+                    <th>ResNet50</th>
+                    <td> Acc : </td>
+                 </tr>
+               </table>
+            </section>
+          </article>
+        </aside> -->
